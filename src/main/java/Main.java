@@ -13,10 +13,15 @@ public class Main {
         System.out.println("Student saved: " + savedStudent);
 
         // Step 2:
-        StudentRepo studentRepo = new StudentRepo();
 
         try {
-            System.out.println(studentRepo.findById("123"));
+            System.out.println(studentService.getRepo().findById("123"));
+        } catch (NoStudentFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println(studentService.getRepo().findById(savedStudent.id()));
         } catch (NoStudentFoundException e) {
             System.out.println(e.getMessage());
         }

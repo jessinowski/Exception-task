@@ -1,6 +1,8 @@
+import lombok.Data;
+
 import java.util.List;
 import java.util.UUID;
-
+@Data
 public class StudentService {
 
     private final StudentRepo repo = new StudentRepo();
@@ -13,4 +15,6 @@ public class StudentService {
     public List<Student> getAllStudents(){
         return repo.getAllStudents();
     }
+
+
 }
